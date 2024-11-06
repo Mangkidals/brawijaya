@@ -1,128 +1,130 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universitas Brawijaya</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
     <style>
         body {
             font-family: "Roboto", sans-serif;
         }
+
+        .text_ub {
+            font-size: 17px;
+            bottom: 5px;
+        }
+
+        .section-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 123, 255, 0.5);
+        }
+
+        .custom-shape {
+            width: 400px;
+            height: 200px;
+            background-color: #224E69; /* warna biru tua */
+            box-shadow: 10px 10px 15px rgb(255, 255, 255); /* bayangan abu-abu */
+            
+        }
     </style>
 </head>
 
-<body class="bg-cover bg-center">
-    <div
-        style="background-image: url(img/gambar\ universitas\ brawijaya.png); background-repeat: no-repeat; background-size: cover;">
-        <nav class="border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="img/navbar.png" class="h-24" alt="Flowbite Logo" />
-                </a>
-                <button data-collapse-toggle="navbar-dropdown" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="navbar-dropdown" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-                <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-                    <ul
-                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:dark:bg-gray-900 dark:border-gray-700">
-                        <li>
-                            <a href="#"
-                                class="text-white flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
-                                Tentang UB
-                        </li>
-                        <li>
-                            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                                class="text-white flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
-                                Fakultas
-                                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 4 4 4-4" />
-                                </svg>
-                            </button>
-                            <!-- Dropdown menu -->
-                            <div id="dropdownNavbar"
-                                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
-                                    aria-labelledby="dropdownLargeButton">
-                                    <li>
-                                        <a href="#"
-                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Fakultas
-                                            Kedokteran</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Fakultas
-                                            Hukum</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Fakultas
-                                            FISIP</a>
-                                    </li>
-                                </ul>
-                                <div class="py-1">
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
-                                        out</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="text-white block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Akademik
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/navbar.png" alt="Logo" height="80">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Tentang UB</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Fakultas
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Fakultas Kedokteran</a></li>
+                            <li><a class="dropdown-item" href="#">Fakultas Hukum</a></li>
+                            <li><a class="dropdown-item" href="#">Fakultas FISIP</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Akademik</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <main class="flex flex-col items-center justify-center h-screen">
-            <img src="img/Group 15.png" alt="">
-
-        </main>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-</body>
-
-<body>
-    <div class="bg-black w-2/3 h-10">
-    </div>
-    <div class="bg-white w-auto h-24">
-
-    </div>
-    <div class="bg-sky-900 w-auto h-5/6 flex self-end">
-        
-        <img class="mt-auto" src="img/ub1-removebg-preview 1.png">
-        <h1 class="text-lg text-white font-semibold">REKTOR:</h1>
-        <p class="text-xl text-white font-bold">Prof. Widodo, S.Si., M.Si., Ph.D.Med.Sc</p>
-        <div class="mt-80 bg-gray-600 p-20 rounded-lg w-3/4 h-56">
-            <div class="absolute top-4 right-4 bg-blue-900 text-white px-4 py-2">
-                TENTANG UB
-               </div>
-            <p class="text-white">
-                Universitas Brawijaya (UB) berkedudukan di Kota Malang, Jawa Timur,
-                didirikan pada tanggal 5 Januari 1963 dengan Surat Keputusan Menteri Perguruan Tinggi
-                dan Ilmu Pengetahuan (PTIP) Nomor 1 Tahun 1963,
-                dan kemudian dikukuhkan dengan Keputusan Presiden Republik Indonesia Nomor 196 Tahun
-                1963 tertanggal 23 September 1963.
-            </p> 
-            <a href="#" class="block text-blue-300 mt-4">Baca Selengkapnya...</a>
-            <img src="img/simbol.png" alt="">
+    <!-- Hero Section -->
+    <div class="position-relative" style="background-image: url('img/gambar universitas brawijaya.png'); background-size: cover; height: 100vh;">
+        <div class="container h-100 d-flex align-items-center justify-content-center">
+            <img src="img/Group 15.png" alt="Hero Image" class="img-fluid">
         </div>
     </div>
-</div>
-</div>
-    </div>
+
+    <!-- Bagian Akademik -->
+    <section class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Gambar / Shape -->
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <div class="custom-shape">
+                        <p class="text_ub d-flex pt-2">
+                            Temukan berbagai informasi seputar akademik UB meliputi seleksi masuk, program vokasi, program sarjana, program magister, program doktor, program spesialis, program double degree, dan international admission.
+                        </p>
+                        <a href="tentang_ub.html" class="text-info">Baca Selengkapnya...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Fakultas -->
+    <section class="bg-white text-dark py-5">
+        <div class="container">
+            <div class="position-relative">
+                <img src="img/Frame 6 (1).png" alt="Speaker" class="img-fluid">
+                <div class="section-overlay d-flex align-items-center justify-content-center">
+                    <div class="bg-primary p-3 text-white">
+                        <h2 class="h4 mb-0">FAKULTAS</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="custom-shape"></div>
+
+    <!-- Bagian Footer -->
+    <footer class="bg-dark text-center text-white py-3 mt-5">
+        <p>&copy; 2024 Universitas Brawijaya. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+</html>
