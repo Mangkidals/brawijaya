@@ -11,10 +11,158 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         body {
+            background-color: #1A3A5D;
+            color: white;
+        }
+
+        .header {
+            background-image: url('img/background-header.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .header h5 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+        }
+
+        .content {
+            margin-top: 50px;
+        }
+
+        .text-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .img-fluid {
+            transition: transform 0.3s ease;
+        }
+
+        .img-fluid:hover {
+            transform: scale(1.05);
+        }
+
+        .text-info {
+            color: #1E90FF;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .text-info:hover {
+            color: #FF6347;
+            text-decoration: underline;
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+
+        .col-md-6:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .content .col-md-3 {
+                margin-bottom: 15px;
+            }
+        }
+        body {
             font-family: "Roboto", sans-serif;
+        }
+           /* Background and text adjustments */
+        .bg-gray {
+            background-color: #727070;
+        }
+        
+        /* Custom button style */
+        .btn-custom {
+            background-color: #224E69;
+            color: #ffffff;
+            border: none;
+            transition: 0.3s;
+        }
+        
+        .btn-custom:hover {
+            background-color: #003049;
+            color: #ffc107;
+            transform: scale(1.05);
+        }
+        
+        /* Card hover effect */
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Parallax hero section */
+        .parallax {
+            background-image: url('img/gambar universitas brawijaya.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .parallax .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(57, 88, 121, 0.5);
+        }
+
+        .custom-fakultas {
+            width: 200px;
+            height: 80px;
+            background-color: #003049;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            box-shadow: 5px 5px 0px #ffffff;
+        }
+        
+        /* AOS Animations */
+        .aos-init {
+            opacity: 0;
         }
 
         .text_ub {
@@ -28,21 +176,76 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 123, 255, 0.5);
+            background-color: rgba(57, 88, 121, 0.5);
         }
-
-        .custom-shape {
-            width: 400px;
-            height: 200px;
-            background-color: #224E69; /* warna biru tua */
-            box-shadow: 10px 10px 15px rgb(255, 255, 255); /* bayangan abu-abu */
             
+        .custom-fakultas {
+        width: 200px;
+        height: 80px;
+        background-color: #003049; /* warna biru tua */
+        color: rgb(255, 255, 255); /* warna teks putih */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        box-shadow: 5px 5px 0px rgb(255, 255, 255); /* bayangan bawah */
+    }
+        .header {
+            padding: 20px;
+            text-align: left;
+            background-color: #224E69;
+            color: #ffffff;
+            box-shadow: 0px 5px 10px rgb(87, 86, 86); /* bayangan bawah */
         }
-    </style>
+        .content {
+            background-color: #727070;
+            padding: 40px;
+            border-radius: 10px;
+        }
+        .profile-image {
+            width: 400px;
+            height: auto;
+        }
+    </style>    
 </head>
 
 <body class="bg-light">
     <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="tentang_ub.html">
+                <img src="img/navbar.png" alt="Logo" height="80">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="tentang_ub.html">Tentang UB</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fakultas</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="fakultas_ub.html">Fakultas Kedokteran</a></li>
+                            <li><a class="dropdown-item" href="fakultas_ub.html">Fakultas Hukum</a></li>
+                            <li><a class="dropdown-item" href="fakultas_ub.html">Fakultas FISIP</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white" href="akademik_ub.html">Akademik</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="parallax">
+        <div class="overlay"></div>
+        <div class="container d-flex h-100 align-items-center justify-content-center">
+            <img src="img/Group 15.png" alt="Hero Image" class="img-fluid" data-aos="zoom-in" data-aos-duration="1500">
+    </div>
+    </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -55,76 +258,244 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Tentang UB</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Fakultas
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Fakultas Kedokteran</a></li>
-                            <li><a class="dropdown-item" href="#">Fakultas Hukum</a></li>
-                            <li><a class="dropdown-item" href="#">Fakultas FISIP</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
-                        </ul>
+                        <span class="navbar-text text-white fw-bold">
+                            UNIVERSITAS BRAWIJAYA
+                        </span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Akademik</a>
+                        <img src="img/simbol.png" alt="aksesoris" class="ms-3" height="100"> <!-- Mengatur ukuran gambar -->
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <div class="position-relative" style="background-image: url('img/gambar universitas brawijaya.png'); background-size: cover; height: 100vh;">
-        <div class="container h-100 d-flex align-items-center justify-content-center">
-            <img src="img/Group 15.png" alt="Hero Image" class="img-fluid">
-        </div>
+    
+    <div class="header">
+        <h5>REKTOR :</h5>
+        <p>Prof. Widodo, S.Si., M.Si., Ph.D.Med.Sc</p>
     </div>
 
+    <!-- Main Content Section -->
+    <div class="container mt-5">
+        <div class="row content align-items-center">
+            <!-- Left Column: Profile Image -->
+            <div class="col-md-3 text-center">
+                <img src="img/ub1-removebg-preview 1.png" alt="Rektor Image" class=" img-fluid" data-aos="fade-up">
+            </div>
+
+            <!-- Center Column: Description -->
+            <div class="col-md-6">
+                <div class="text-box text-white" data-aos="fade-up">
+                    <p>Universitas Brawijaya (UB) berkedudukan di Kota Malang, Jawa Timur, didirikan pada tanggal 5 Januari 1963 dengan Surat Keputusan Menteri Perguruan Tinggi dan Ilmu Pengetahuan (PTIP) Nomor 1 Tahun 1963, dan kemudian dikukuhkan dengan Keputusan Presiden Republik Indonesia Nomor 196 Tahun 1963 tertanggal 23 September 1963.</p>
+                    <a href="tentang_ub.html" class="text-info">Baca Selengkapnya...</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Mascot Image -->
+            <div class="col-md-3 text-center">
+                <img src="img/simbol.png" alt="Mascot Image" class="img-fluid" style="max-width: 200px;">
+            </div>
+        </div>
+    </div>
+    
+    
     <!-- Bagian Akademik -->
-    <section class="bg-primary text-white py-5">
-        <div class="container">
-            <div class="row">
-                <!-- Gambar / Shape -->
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <div class="custom-shape">
-                        <p class="text_ub d-flex pt-2">
-                            Temukan berbagai informasi seputar akademik UB meliputi seleksi masuk, program vokasi, program sarjana, program magister, program doktor, program spesialis, program double degree, dan international admission.
-                        </p>
-                        <a href="tentang_ub.html" class="text-info">Baca Selengkapnya...</a>
-                    </div>
+    <section class="bg-light text-dark py-0 mt-lg-5"> <!-- Ubah bg-white menjadi bg-light untuk warna abu-abu -->
+    <div class="position-relative">
+        <!-- Background image with overlay -->
+        <div class="position-relative">
+            <img src="img/6747686115221fdbc12afeb5f57da359 1.png" alt="Graduation" class="img-fluid w-100">
+            <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5);"></div>
+        </div>
+
+        <!-- Centered main heading text with shadow and animation -->
+        <div class="custom-fakultas position-absolute top-50 start-50 translate-middle text-center text-white fw-bold display-4" style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); animation: fadeIn 1.5s ease-out;">
+            AKADEMIK
+        </div>
+
+        <!-- Content block to center -->
+        <div class="row position-relative" style="min-height: 30vh;">
+            <div class="col-md-4 d-flex justify-content-center align-items-center mx-auto">
+                <div class="custom-shape mt-5 ms-lg-1 p-4" style="background-color: rgba(255, 255, 255, 0.8); border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); animation: fadeInUp 2s;">
+                    <p class="text-dark pt-2">
+                        Temukan berbagai informasi seputar akademik UB meliputi seleksi masuk, program vokasi, program sarjana, program magister, program doktor, program spesialis, program double degree, dan international admission.
+                    </p>
+                    <a href="akademik_ub.html" class="text-info fw-bold" style="text-decoration: none; transition: color 0.3s ease, text-shadow 0.3s ease;">Baca Selengkapnya...</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- CSS for additional styling and animation -->
+<style>
+    /* Fade-in animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Overlay style */
+    .overlay {
+        z-index: 1;
+    }
+
+    /* Text and content shadow */
+    .custom-fakultas {
+        z-index: 2;
+    }
+
+    /* Hover effect for link */
+    .text-info:hover {
+        color: #0056b3;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Shape and content box */
+    .custom-shape {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 2;
+    }
+</style>
+
+    
 
     <!-- Bagian Fakultas -->
-    <section class="bg-white text-dark py-5">
         <div class="container">
             <div class="position-relative">
-                <img src="img/Frame 6 (1).png" alt="Speaker" class="img-fluid">
-                <div class="section-overlay d-flex align-items-center justify-content-center">
-                    <div class="bg-primary p-3 text-white">
-                        <h2 class="h4 mb-0">FAKULTAS</h2>
+                <img src="img/fakultas.png" alt="Speaker" class="img-fluid">
+                    < <div class="custom-fakultas position-absolute top-50 start-50 translate-middle text-center">
+                        FAKULTAS
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="container my-5">
+        <!-- Header -->
+        <div class="text-center mb-4">
+            <h1 class="display-5 fw-bold text-black">FAKULTAS</h1>
+        </div>
+    
+        <!-- Fakultas Cards -->
+    <div class="row text-center">
+        <!-- Fakultas Kedokteran Card -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card mb-4 shadow-sm">
+                <a href="fakultas_kedokteran.html" target="_blank">
+                    <img src="img/fakultas kedokteran.png" class="card-img-top" alt="Fakultas Kedokteran">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Fakultas Kedokteran</h5>
+                    <a href="fakultas_kedokteran.html" class="btn btn-custom mt-3">Selengkapnya</a>
+                </div>
+            </div>
+        </div>
 
-    <div class="custom-shape"></div>
+        <!-- Fakultas Hukum Card -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="card mb-4 shadow-sm">
+                <a href="fakultas_hukum.html" target="_blank">
+                    <img src="img/fakultas hukum.png" class="card-img-top" alt="Fakultas Hukum">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Fakultas Hukum</h5>
+                    <a href="fakultas_hukum.html" class="btn btn-custom mt-3">Selengkapnya</a>
+                </div>
+            </div>
+        </div>
 
-    <!-- Bagian Footer -->
+        <!-- Fakultas FISIP Card -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="card mb-4 shadow-sm">
+                <a href="fakultas_fisip.html" target="_blank">
+                    <img src="img/fakultas fisip.png" class="card-img-top" alt="Fakultas FISIP">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Fakultas FISIP</h5>
+                    <a href="fakultas_fisip.html" class="btn btn-custom mt-3">Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+
+<!-- Scripts -->
     <footer class="bg-dark text-center text-white py-3 mt-5">
         <p>&copy; 2024 Universitas Brawijaya. All rights reserved.</p>
     </footer>
+    <!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container text-md-start text-center">
+        <div class="row text-md-start text-center">
+            <!-- Logo and About -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold">Universitas Brawijaya</h6>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffc107; height: 2px" />
+                <p>Universitas Brawijaya is a prestigious educational institution in Indonesia, dedicated to providing quality education and advancing research and innovation.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold">Quick Links</h6>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffc107; height: 2px" />
+                <p><a href="index.html" class="text-white">BERANDA</a></p>
+                <p><a href="tentang_ub.html" class="text-white">TENTANG UB</a></p>
+                <p><a href="akademik_ub.html" class="text-white">AKADEMIK</a></p>
+                <p><a href="fakultas_ub.html" class="text-white">FAKULTAS</a></p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold">Contact</h6>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffc107; height: 2px" />
+                <p><i class="fas fa-home mr-3"></i>Jl. Veteran, Malang, Jawa Timur, Indonesia 85 KM dari kota Surabaya, Malang, Indonesia, East Java</p>
+                <p><i class="fas fa-envelope mr-3"></i> humas@ub.ac.id</p>
+            </div>
+
+            <!-- Social Media -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase fw-bold">Follow Us</h6>
+                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffc107; height: 2px" />
+                <div>
+                    <a href="https://www.facebook.com/Universitas.Brawijaya.Official" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/UB_Official" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/univ.brawijaya?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/school/universitas-brawijaya/" class="text-white me-4"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        2024 Universitas Brawijaya. All rights reserved.
+    </div>
+</footer>
+
+<!-- Add Font Awesome for Icons (if not already included) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script>
+    AOS.init();
+</script>
 </html>
+    
