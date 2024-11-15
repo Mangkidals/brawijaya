@@ -6,6 +6,7 @@
     <title>Informasi Akademik</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        
         .bg-dark-blue {
             background-color: #020202; /* Dark blue color */
             color: white;
@@ -42,14 +43,31 @@
 </head>
 <body>
 
-    <!-- Header Section -->
-    <div class="bg-dark-blue text-white text-center p-3">
-        <div class="d-flex justify-content-between align-items-center container">
-            <img src="img/ireng.png" alt="Universitas Brawijaya Logo" class="header-logo">
-            <div>AKADEMIk | BUILDING UP NOBLE FUTURE</div>
-            <img src="img/simbol.png" alt="Kampus Merdeka Logo" class="header-logo">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="tentang_ub.html">
+                <img src="img/navbar.png" alt="Logo" height="80">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="tentang_ub.html">Tentang UB</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fakultas</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="fakultas_ub.html#haha">Fakultas Kedokteran</a></li>
+                            <li><a class="dropdown-item" href="fakultas_ub.html#serv">Fakultas Hukum</a></li>
+                            <li><a class="dropdown-item" href="fakultas_ub.html#damar">Fakultas FISIP</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white" href="akademik_ub.html">Akademik</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </nav>
 
     <!-- Informasi Akademik Section -->
     <div class="text-center py-5">
@@ -58,31 +76,62 @@
     </div>
 
     <!-- Beasiswa Section -->
-    <div class="bg-light-blue py-5 text-black">
+    <div class="bg-light py-5 text-black">
         <div class="container">
-            <h2 class="section-title">BEASISWA</h2>
-            <p>Universitas Brawijaya menyediakan berbagai jenis beasiswa bagi mahasiswa berprestasi maupun mahasiswa kurang mampu yang bersumber dari instansi pemerintah maupun institusi non-pemerintah. Pengelolaan, pendaftaran, dan seleksi beasiswa UB diselenggarakan secara online maupun offline oleh Bagian Kemahasiswaan UB.</p>
-            <h5>Beasiswa yang diberikan pemerintah diantaranya adalah:</h5>
-            <ul>
-                <li>Beasiswa Afirmasi Dikti untuk mahasiswa dari Provinsi Papua dan Provinsi Papua Barat</li>
-                <li>Bidik Misi</li>
-                <li>BBP PPA</li>
-                <li>PPA</li>
-            </ul>
-            <h5>Terdapat pula beasiswa yang berasal dari kerjasama antara Kemdikbud dengan perusahaan, diantaranya adalah:</h5>
-            <ul>
-                <li>Beasiswa Unggulan CIMB (BU-CIMB)</li>
-                <li>Beasiswa Nusantara Cerdas (BNC-BRI)</li>
-                <li>Beasiswa OSI (Olimpiade Sains Internasional)</li>
-            </ul>
-            <h5>Beasiswa lain yang diberikan UB kepada mahasiswa adalah beasiswa yang diberikan oleh instansi/perusahaan baik negeri maupun swasta yang bekerjasama dengan UB, diantaranya adalah:</h5>
-            <ul>
-                <li>Beasiswa Djarum</li>
-                <li>Beasiswa I-MHERE</li>
-                <li>Beasiswa Pertamina</li>
-                <li>Beasiswa Bank Indonesia</li>
-                <li>Beasiswa Supersmar</li>
-            </ul>
+            <div class="section-title text-center mb-4">
+                <h2 class="text-white fw-bold">BEASISWA</h2>
+            </div>
+            <p class="text-center mb-5">Universitas Brawijaya menyediakan berbagai jenis beasiswa bagi mahasiswa berprestasi maupun mahasiswa kurang mampu yang bersumber dari instansi pemerintah maupun institusi non-pemerintah. Pengelolaan, pendaftaran, dan seleksi beasiswa UB diselenggarakan secara online maupun offline oleh Bagian Kemahasiswaan UB.</p>
+            
+            <div class="row">
+                <!-- Beasiswa Pemerintah -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-bold">Beasiswa Pemerintah</h5>
+                            <p class="card-text">Beasiswa yang diberikan pemerintah diantaranya adalah:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Beasiswa Afirmasi Dikti untuk mahasiswa dari Provinsi Papua dan Provinsi Papua Barat</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Bidik Misi</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> BBP PPA</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> PPA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Beasiswa Kerjasama Kemdikbud dan Perusahaan -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-bold">Beasiswa Kerjasama Kemdikbud</h5>
+                            <p class="card-text">Beasiswa dari kerjasama Kemdikbud dengan perusahaan diantaranya adalah:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Beasiswa Unggulan CIMB (BU-CIMB)</li>
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Beasiswa Nusantara Cerdas (BNC-BRI)</li>
+                                <li><i class="fas fa-check-circle text-warning me-2"></i> Beasiswa OSI (Olimpiade Sains Internasional)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Beasiswa Instansi/Perusahaan -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-bold">Beasiswa UB dan Instansi</h5>
+                            <p class="card-text">Beasiswa lain yang diberikan oleh instansi atau perusahaan yang bekerjasama dengan UB:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-danger me-2"></i> Beasiswa Djarum</li>
+                                <li><i class="fas fa-check-circle text-danger me-2"></i> Beasiswa I-MHERE</li>
+                                <li><i class="fas fa-check-circle text-danger me-2"></i> Beasiswa Pertamina</li>
+                                <li><i class="fas fa-check-circle text-danger me-2"></i> Beasiswa Bank Indonesia</li>
+                                <li><i class="fas fa-check-circle text-danger me-2"></i> Beasiswa Supersmar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -90,30 +139,44 @@
     <div class="bg-graduation"></div>
 
     <!-- Seleksi Masuk Section -->
-    <div class="bg-light-blue text-black py-5">
+    <div class="bg-gradient text-black py-5">
         <div class="container">
-            <h2 class="section-title">SELEKSI MASUK</h2>
-            <p>Seleksi Program Sarjana:</p>
-            <ul>
-                <li>
-                    <strong>Seleksi Nasional Berdasarkan Prestasi (SNBP)</strong> <br>
-                    Seleksi yang dilakukan melalui ujian tulis dan dilaksanakan secara nasional dan serentak oleh seluruh Perguruan Tinggi Negeri di Indonesia, dimaksudkan untuk menjaring calon mahasiswa yang berprestasi, baik di bidang akademik maupun non akademik.
-                    <a href="https://snpmb.bppp.kemdikbud.go.id/" class="text-bg-blue" target="_blank">snpmb.bppp.kemdikbud.go.id</a>
-                </li>
-                <li>
-                    <strong>Seleksi Nasional Berbasis Tes (SNBT)</strong> <br>
-                    Seleksi yang dilakukan melalui ujian tulis dan dilaksanakan secara nasional dan serentak oleh seluruh Perguruan Tinggi Negeri di Indonesia.
-                    <a href="https://snpmb.bppp.kemdikbud.go.id/" class="text-bg-blue" target="_blank">snpmb.bppp.kemdikbud.go.id</a>
-                </li>
-                <li>
-                    <strong>Seleksi Mandiri</strong> <br>
-                    Seleksi yang dilakukan melalui ujian tulis secara mandiri oleh Universitas Brawijaya. Dalam seleksi ini dibuka seleksi untuk kelas internasional dan kelas bahasa inggris.
-                    <a href="http://selma.ub.ac.id" class="text-bg-blue" target="_blank">selma.ub.ac.id</a>
-                </li>
-            </ul>
+            <h2 class="section-title text-center fw-bold text-white mb-4">SELEKSI MASUK</h2>
+            <p class="text-center mb-5">Pilih jalur seleksi yang sesuai dengan keinginan Anda:</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><i class="fas fa-award me-2"></i> Seleksi Nasional Berdasarkan Prestasi (SNBP)</h5>
+                            <p class="card-text">Seleksi yang dilakukan melalui ujian tulis dan dilaksanakan secara nasional dan serentak oleh seluruh Perguruan Tinggi Negeri di Indonesia, dimaksudkan untuk menjaring calon mahasiswa yang berprestasi, baik di bidang akademik maupun non akademik.</p>
+                            <a href="https://snpmb.bppp.kemdikbud.go.id/" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><i class="fas fa-pencil-alt me-2"></i> Seleksi Nasional Berbasis Tes (SNBT)</h5>
+                            <p class="card-text">Seleksi yang dilakukan melalui ujian tulis dan dilaksanakan secara nasional dan serentak oleh seluruh Perguruan Tinggi Negeri di Indonesia.</p>
+                            <a href="https://snpmb.bppp.kemdikbud.go.id/" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><i class="fas fa-university me-2"></i> Seleksi Mandiri</h5>
+                            <p class="card-text">Seleksi yang dilakukan melalui ujian tulis secara mandiri oleh Universitas Brawijaya. Dalam seleksi ini dibuka seleksi untuk kelas internasional dan kelas bahasa Inggris.</p>
+                            <a href="http://selma.ub.ac.id" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
     <footer class="bg-dark text-center text-white py-3 mt-5">
         <p>&copy; 2024 Universitas Brawijaya. All rights reserved.</p>
     </footer>
@@ -176,4 +239,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </body>
+</html>

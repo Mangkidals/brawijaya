@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="login.php" method="POST">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+
+    <h2>Register</h2>
+    <form action="register.php" method="POST">
+        <div class="form-group">
+            <label for="reg_username">Username:</label>
+            <input type="text" id="reg_username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="reg_email">Email:</label>
+            <input type="email" id="reg_email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="reg_password">Password:</label>
+            <input type="password" id="reg_password" name="password" required>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+
+    <h2>User List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $users = getAllUsers();
+            while ($row = mysqli_fetch_assoc($users)) {
+                echo "<tr>";
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['username'] . "</td>";
+                echo "<td>" . $row['email'] . "</td>";
+                echo "<td>" . $row['created_at'] . "</td>";
+                echo "<td>";
+                <!-- echo "<button onclick="editUser(" . $row['id'] . ")\">Edit</button> ";
+                echo "<button onclick=\"deleteUser(" . $row['id'] . ")\">Delete</button>"; -->
+                echo "</td>";
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+</body>
+</html>
