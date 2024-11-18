@@ -1,5 +1,5 @@
 <?php 
-    require "../config/config.php";
+    include "../config/config.php";
 ?>
 
 <!doctype html>
@@ -38,21 +38,10 @@
                                 <option value="3">Informatika</option>
                         </select>
                     </div>
-                    <!-- <div class="mb-3">
-                        <label for="nmpenerbit" class="form-label">Tahun Terbit</label>
-                        <select class="form-select" name="tahunTerbit">
-                                <option selected value="0">--Pilih Tahun--</option>
-                                <?php    
-                                    for($i = 1900; $i <= date('Y'); $i++){
-                                ?>
-                                <option value="<?= $i ?>"><?= $i ?></option>
-                                <?php } ?>
-                        </select>
-                    </div> -->
                     <div class="mb-3">
-                        <label for="nmpenerbit" class="form-label">Kategori / Genre</label>
-                        <select class="form-select" name="genre">
-                                <option selected value="0">--Pilih Genre--</option>
+                        <label for="nmpenerbit" class="form-label">Kategori</label>
+                        <select class="form-select" name="kategori">
+                                <option selected value="0">--Pilih Kategori--</option>
                                 <option value="1">Romance</option>
                                 <option value="2">Thriller</option>
                                 <option value="3">Horror</option>
@@ -63,7 +52,7 @@
                         <label for="sinopsis">Sinopsis</label>
                         <textarea name="sinopsis" class="form-control" placeholder="Leave a comment here" id="" for="sinopsis"></textarea>
                     </div>
-    
+
 
                     <div class="mb-3">
                         <input type="submit" value="Input Data Buku" class="btn btn-primary" name="btnInputBuku">
